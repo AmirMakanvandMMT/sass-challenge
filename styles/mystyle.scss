@@ -1,0 +1,87 @@
+$input-color: rgb(221, 130, 97);
+$primary-color: rgb(157, 161, 173);
+$foreground-color: rgb(63, 69, 78);
+$background-color: rgb(44, 44, 44);
+
+
+
+@import './import';
+
+
+@mixin flex-center($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+       -moz-border-radius: $radius;
+        -ms-border-radius: $radius;
+            border-radius: $radius;
+  }
+
+@mixin drop-shadow{
+    -webkit-box-shadow: 2px 5px 9px 0px rgba(0,0,0,0.39);
+    -moz-box-shadow: 2px 5px 9px 0px rgba(0,0,0,0.39);
+    box-shadow: 2px 5px 9px 0px rgba(0,0,0,0.39);
+}
+
+//   html { 
+//     background: url(../images/San-Francisco-l.jpg) no-repeat center center fixed; 
+//     -webkit-background-size: cover;
+//     -moz-background-size: cover;
+//     -o-background-size: cover;
+//     background-size: cover;
+//     background: opacity(30%);
+//     //filter: opacity();
+// } wanted to add background
+
+
+body {
+    @include flex-center(column);
+    background: $background-color;
+    
+    
+}
+
+.titles{
+    padding-left: 10px;
+    padding-right: 20px;
+
+}
+.textBox{
+    height: 40px;
+}
+form{
+    color: $primary-color;
+}
+
+input {
+    color: $input-color;
+    padding-left: 10px;
+}
+
+.list-main{
+    @include flex-center(row);
+    @include border-radius(5px);
+    @include drop-shadow();
+    height: 46px;
+    justify-content: left;
+    background-color: $foreground-color;
+
+}
+
+.checkbox {
+    @include flex-center(row);
+    justify-content: flex-start;
+    margin-top: 10px;
+}
+
+ h6 {
+     margin: 0px;
+ }
+
+
+
